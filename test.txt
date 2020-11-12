@@ -1,0 +1,19 @@
+get('http://localhost:5000/boards').json()
+post('http://localhost:5000/boards', data={"name": "test"}).json()
+
+get('http://localhost:5000/board/1').json()
+put('http://localhost:5000/board/1', data={"name": "xxx"}).json()
+delete('http://localhost:5000/board/1')
+
+
+# для наступних дій потрібно створити дошку
+
+get('http://localhost:5000/tasks').json()
+post('http://localhost:5000/tasks', data={"header":"test", "description":"test description", "status":False, "board_id":2}).json()
+
+get('http://localhost:5000/tasks/board/2').json()
+post('http://localhost:5000/tasks/board/2', data={"header":"test", "description":"test description", "status":False}).json()
+
+get('http://localhost:5000/task/1').json()
+put('http://localhost:5000/task/1', data={"header":"test", "description":"test description", "status":False}).json()
+delete('http://localhost:5000/task/1')
